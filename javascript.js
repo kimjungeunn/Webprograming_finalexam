@@ -1,72 +1,30 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. 다크모드 기능
-  const header = document.querySelector('.header-container')
-  const toggleBtn = document.createElement('button')
-  toggleBtn.style.cssText =
-    'padding: 8px 12px; cursor: pointer; border-radius: 5px; border: none; font-weight: bold; background: #f39c12; color: white; transition: 0.3s;'
-  header.appendChild(toggleBtn)
+  const navbar = document.getElementById('navbar')
 
-  let isDark = localStorage.getItem('darkMode') === 'true'
-  const applyMode = () => {
-    document.body.style.backgroundColor = isDark ? '#1a1a1a' : '#fff'
-    document.body.style.color = isDark ? '#f1f1f1' : '#333'
-    toggleBtn.textContent = isDark ? '☀️ 라이트모드' : '🌙 다크모드'
-  }
-  applyMode()
-
-  toggleBtn.addEventListener('click', () => {
-    isDark = !isDark
-    localStorage.setItem('darkMode', isDark)
-    applyMode()
+  // 스크롤 시 메뉴바 배경색 변경
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled')
+    } else {
+      navbar.classList.remove('scrolled')
+    }
   })
 
-  // 2. 스크롤 애니메이션 (카드가 부드럽게 등장)
-  const cards = document.querySelectorAll('.profile-card, .project-item')
-  cards.forEach((card) => {
-    card.style.opacity = '0'
-    card.style.transform = 'translateY(30px)'
-  })
+  // 메인 화면의 '요약 보기' 버튼 클릭 시 부드럽게 스크롤
+  const startBtn = document.querySelector('.start-btn')
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.transition = 'opacity 0.8s ease, transform 0.8s ease'
-        entry.target.style.opacity = '1'
-        entry.target.style.transform = 'translateY(0)'
-        observer.unobserve(entry.target)
+  if (startBtn) {
+    startBtn.addEventListener('click', function (e) {
+      e.preventDefault()
+      const targetId = this.getAttribute('href')
+      const targetElement = document.querySelector(targetId)
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth',
+        })
       }
     })
-  })
-  cards.forEach((card) => observer.observe(card))
-
-  // 3. 이미지 슬라이더 (캐러셀) 기능
-  const track = document.querySelector('.slider-track')
-  const images = document.querySelectorAll('.slider-track img')
-  const prevBtn = document.querySelector('.prev-btn')
-  const nextBtn = document.querySelector('.next-btn')
-
-  let slideIndex = 0
-
-  // 슬라이드 이동 함수
-  const moveSlide = () => {
-    track.style.transform = `translateX(-${slideIndex * 100}%)`
   }
-
-  // 다음 버튼 클릭
-  nextBtn.addEventListener('click', () => {
-    slideIndex = (slideIndex + 1) % images.length
-    moveSlide()
-  })
-
-  // 이전 버튼 클릭
-  prevBtn.addEventListener('click', () => {
-    slideIndex = (slideIndex - 1 + images.length) % images.length
-    moveSlide()
-  })
-
-  // 3초마다 자동으로 넘어가기
-  setInterval(() => {
-    slideIndex = (slideIndex + 1) % images.length
-    moveSlide()
-  }, 5000)
 })
