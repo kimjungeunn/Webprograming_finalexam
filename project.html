@@ -22,8 +22,6 @@
       </div>
     </nav>
 
-    <div style="padding-top: 120px"></div>
-
     <div class="content-wrapper">
       <section class="content-section">
         <h2 class="section-title">My Projects</h2>
@@ -51,13 +49,41 @@
           </div>
 
           <div class="card">
-            <h3 style="color: #333">03. 웹 취약점 분석 및 모의해킹 스터디</h3>
+            <h3 id="midterm-title" class="clickable-title" style="color: #333">
+              03. 웹프로그래밍 중간과제
+            </h3>
             <p style="margin-top: 15px; color: #555">
-              <strong>기술:</strong> Web Security, HTML/JS<br />
-              <strong>내용:</strong> Cross-Site Scripting(XSS)과 API Injection
-              등 실제 웹 생태계에서 발생하는 주요 보안 위협의 원리를 분석하고,
-              안전한 코딩을 위한 방어 로직을 연구했습니다.
+              <strong>기술:</strong> HTML, CSS, JS<br />
+              <strong>내용:</strong> 웹프로그래밍 강의 중간과제로 진행한
+              프로젝트입니다. 시맨틱 태그를 활용한 마크업과 CSS 레이아웃 설계를
+              통해 완성도 있는 웹페이지를 구현했습니다.
             </p>
+            <a
+              href="https://hcj1last.vercel.app/"
+              target="_blank"
+              class="project-link-btn"
+              >프로젝트 보러가기 &rarr;</a
+            >
+          </div>
+
+          <div class="card">
+            <h3 id="final-title" class="clickable-title" style="color: #333">
+              04. 웹프로그래밍 기말과제
+            </h3>
+            <p style="margin-top: 15px; color: #555">
+              <strong>기술:</strong> HTML, CSS, JS<br />
+              <strong>내용:</strong> 중간과제를 디벨롭하여 javascript 기능을
+              추가하였습니다.
+              <br />
+              <br />
+              <br />
+            </p>
+            <a
+              href="https://web-team-project-woad.vercel.app/"
+              target="_blank"
+              class="project-link-btn"
+              >프로젝트 보러가기 &rarr;</a
+            >
           </div>
         </div>
       </section>
@@ -66,6 +92,26 @@
     <footer>
       <p>&copy; 2026 김정은. All rights reserved.</p>
     </footer>
+
+    <div id="image-modal" class="modal">
+      <span class="close-btn">&times;</span>
+      <img
+        class="modal-content"
+        id="modal-img"
+        src="중간과제.jpg"
+        alt="중간과제 사진"
+      />
+    </div>
+
+    <div id="final-image-modal" class="modal">
+      <span id="final-close-btn" class="close-btn">&times;</span>
+      <img
+        class="modal-content"
+        id="final-modal-img"
+        src="기말과제.jpg"
+        alt="기말과제 사진"
+      />
+    </div>
 
     <script src="javascript.js"></script>
   </body>

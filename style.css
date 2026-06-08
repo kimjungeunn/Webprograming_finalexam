@@ -1,4 +1,6 @@
-/* 기본 설정 */
+/* =========================================
+   1. 기본 설정 및 공통 스타일
+========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -30,6 +32,14 @@ a {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 15px 0;
 }
+/* 서브페이지 네비게이션바 항상 고정 (투명해짐 방지) */
+body.subpage #navbar {
+  background-color: #ffffff !important;
+  color: #333 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  padding: 15px 0 !important;
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -52,7 +62,9 @@ a {
   opacity: 0.7;
 }
 
-/* 히어로 섹션 */
+/* =========================================
+   2. Home (메인 화면) 스타일
+========================================= */
 .hero-section {
   position: relative;
   height: 100vh;
@@ -85,7 +97,6 @@ a {
   text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* 시작 버튼 */
 .start-btn {
   background-color: #fff;
   color: #333;
@@ -102,11 +113,13 @@ a {
   transform: translateY(-3px);
 }
 
-/* 하단 콘텐츠 영역 */
 .content-wrapper {
   max-width: 900px;
   margin: 0 auto;
   padding: 100px 20px;
+  min-height: calc(
+    100vh - 84px
+  ); /* 내용이 짧아도 푸터가 화면 하단에 예쁘게 위치하도록 최소 높이 설정 */
 }
 .section-title {
   text-align: center;
@@ -115,7 +128,6 @@ a {
   color: #222;
 }
 
-/* 카드 및 요약 디자인 */
 .card {
   background: #fff;
   padding: 50px;
@@ -136,7 +148,6 @@ a {
   word-break: keep-all;
 }
 
-/* 윤곽선 버튼 (상세페이지 이동용) */
 .btn-group {
   margin-top: 40px;
 }
@@ -161,166 +172,13 @@ footer {
   color: #aaa;
 }
 
-/* --- Team Page (밝은 테마 3박스) 스타일 --- */
-
-.team-page-wrapper {
-  max-width: 1200px;
-}
-
-.team-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3열 정렬 */
-  gap: 30px;
-  margin-top: 20px;
-}
-
-/* 카드 디자인 */
-.team-card-new {
-  background: #ffffff;
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid #eee;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  height: 600px;
-  transition: 0.3s;
-}
-
-.team-card-new:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-/* 텍스트 영역 */
-.card-content {
-  padding: 35px;
-  flex: 1;
-}
-
-.member-role {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: #00d1ff; /* 홈과 동일한 블루 포인트 */
-  letter-spacing: 1.5px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.member-name {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: #111;
-  margin-bottom: 15px;
-}
-
-.member-intro {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #666;
-  word-break: keep-all;
-}
-
-/* 하단 이미지 영역 */
-.card-visual {
-  position: relative;
-  height: 250px;
-  width: 100%;
-}
-
-.member-img {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  /* 이미지 상단에 살짝 화이트 그라데이션을 주어 텍스트와 자연스럽게 연결 */
-  mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
-}
-
-/* 소셜 아이콘 (이미지 위에 떠있는 형태) */
-.member-socials {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-}
-
-.member-socials a {
-  width: 45px;
-  height: 45px;
-  background: rgba(255, 255, 255, 0.9);
-  color: #333;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-  border: 1px solid #eee;
-}
-
-.member-socials a:hover {
-  background: #00d1ff;
-  color: #fff;
-  border-color: #00d1ff;
-  transform: scale(1.1);
-}
-
-/* 반응형 처리 (화면이 작아지면 1열로) */
-@media (max-width: 1024px) {
-  .team-grid-3 {
-    grid-template-columns: 1fr;
-  }
-  .team-card-new {
-    height: auto;
-  }
-  .card-visual {
-    height: 300px;
-  }
-}
-
-/* 서브페이지 네비게이션바 항상 고정 (투명해짐 방지) */
-body.subpage #navbar {
-  background-color: #ffffff !important;
-  color: #333 !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
-  padding: 15px 0 !important;
-}
-
-/* 여기까지 team page */
-
-/* --- Project Page 2단 그리드 스타일 --- */
-
-.project-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* PC에서는 2열로 배치 */
-  gap: 30px; /* 카드 사이의 간격 */
-}
-
-.project-grid-2 .card {
-  margin-bottom: 0; /* 기존 하단 여백 제거 */
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-}
-
-/* 반응형: 모바일(화면 너비 768px 이하)에서는 1열로 변경 */
-@media (max-width: 768px) {
-  .project-grid-2 {
-    grid-template-columns: 1fr; /* 모바일에서는 1열로 꽉 차게 배치 */
-  }
-}
-
-/* --- Team Page (홈페이지 통일형 밝은 테마 3박스) --- */
-
+/* =========================================
+   3. Team Page 스타일 (밝은 테마 3박스)
+========================================= */
 .team-wrapper {
   max-width: 1100px;
 }
 
-/* 3열 레이아웃 */
 .team-grid-light {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -328,11 +186,10 @@ body.subpage #navbar {
   margin-top: 30px;
 }
 
-/* 하얀색 카드 기본 디자인 */
 .team-card-light {
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 30px;
+  padding: 45px 30px; /* 카드 안쪽 위아래 여백을 넉넉하게 늘려 답답함 해소 */
   text-align: center;
   border: 1px solid #eaeaea;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -346,42 +203,6 @@ body.subpage #navbar {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-/* 카드 맨 위 (역할 뱃지 & 소셜 아이콘) */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-/* 역할 표시 뱃지 */
-.role-badge {
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #00d1ff; /* 홈 화면과 같은 메인 블루 */
-  background: rgba(0, 209, 255, 0.1);
-  padding: 6px 12px;
-  border-radius: 50px;
-  letter-spacing: 1px;
-}
-
-/* 작은 소셜 아이콘 */
-.social-links-top {
-  display: flex;
-  gap: 10px;
-}
-
-.social-links-top a {
-  color: #888;
-  font-size: 1.1rem;
-  transition: 0.3s;
-}
-
-.social-links-top a:hover {
-  color: #333;
-}
-
-/* 동그란 프로필 사진 */
 .profile-img {
   width: 140px;
   height: 140px;
@@ -393,7 +214,6 @@ body.subpage #navbar {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* 카드 본문 텍스트 */
 .card-body h3 {
   font-size: 1.6rem;
   font-weight: 800;
@@ -408,9 +228,241 @@ body.subpage #navbar {
   word-break: keep-all;
 }
 
-/* 모바일 반응형 (1열) */
+/* 하단 소셜 아이콘/이미지 스타일 (크기 대폭 확대) */
+.social-links-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.social-links-bottom a {
+  color: #888;
+  text-decoration: none;
+  font-size: 3.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.social-links-bottom a:hover {
+  transform: scale(1.1);
+}
+
+.social-links-bottom a:hover i {
+  color: #00d1ff;
+}
+
+.social-links-bottom a img.blog-img {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: 0.3s;
+  display: block;
+}
+
+.social-links-bottom a:hover img.blog-img {
+  border-color: #00d1ff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 @media (max-width: 900px) {
   .team-grid-light {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================================
+   4. Project Page 스타일
+========================================= */
+.project-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project-grid-2 .card {
+  margin-bottom: 0;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-link-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #00d1ff;
+  color: #fff !important;
+  font-weight: 800;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.95rem;
+  align-self: flex-start;
+}
+
+.project-link-btn:hover {
+  background-color: #00b8e6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 209, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .project-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   5. About Me Page 방명록(Guestbook) 스타일
+========================================= */
+.gb-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.gb-form input,
+.gb-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: 0.3s;
+}
+
+.gb-form input:focus,
+.gb-form textarea:focus {
+  outline: none;
+  border-color: #00d1ff;
+  background-color: #fff;
+}
+
+.gb-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.gb-submit-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gb-submit-btn:hover {
+  background-color: #00d1ff;
+  transform: translateY(-2px);
+}
+
+.gb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.gb-entry {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #00d1ff;
+}
+
+.gb-entry strong {
+  font-size: 1.1rem;
+  color: #222;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.gb-entry p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.gb-entry .date {
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* --- 클릭 가능한 제목 스타일 --- */
+.clickable-title {
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+/* 마우스 올렸을 때 색상 변경 + 밑줄 추가 */
+.clickable-title:hover {
+  color: #00d1ff !important;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* --- 사진 팝업(Modal) 스타일 --- */
+.modal {
+  display: none; /* 평소에는 숨겨둠 */
+  position: fixed;
+  z-index: 2000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85); /* 반투명 검은 배경 */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: zoomIn 0.3s ease; /* 부드럽게 나타나는 애니메이션 */
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* 닫기 버튼(X) */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #f1f1f1;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: #00d1ff;
 }
