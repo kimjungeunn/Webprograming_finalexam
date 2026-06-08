@@ -541,7 +541,7 @@ footer {
 }
 
 /* 다크모드 활성화 시 배경 및 텍스트 변경 */
-body.dark-mode {
+body.dark-mode:not(.home) {
   background-color: #121212;
   color: #e0e0e0;
 }
@@ -553,68 +553,68 @@ body.dark-mode.subpage #navbar {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
 }
 
-body.dark-mode .card,
-body.dark-mode .team-card-light {
+body.dark-mode:not(.home) .card,
+body.dark-mode:not(.home) .team-card-light {
   background-color: #1e1e1e;
   border-color: #333;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* HTML 태그 내부에 직접 입력된 컬러(#333, #555 등)를 무시하고 덮어씌우기 위해 !important 사용 */
-body.dark-mode .section-title,
-body.dark-mode .card h3,
-body.dark-mode .card h4,
-body.dark-mode .card-body h3,
-body.dark-mode .gb-entry strong {
+body.dark-mode:not(.home) .section-title,
+body.dark-mode:not(.home) .card h3,
+body.dark-mode:not(.home) .card h4,
+body.dark-mode:not(.home) .card-body h3,
+body.dark-mode:not(.home) .gb-entry strong {
   color: #ffffff !important;
 }
 
-body.dark-mode .card p,
-body.dark-mode .card ul,
-body.dark-mode .card-body p,
-body.dark-mode .gb-entry p {
+body.dark-mode:not(.home) .card p,
+body.dark-mode:not(.home) .card ul,
+body.dark-mode:not(.home) .card-body p,
+body.dark-mode:not(.home) .gb-entry p {
   color: #cccccc !important;
 }
 
-body.dark-mode footer {
+body.dark-mode:not(.home) footer {
   background-color: #0a0a0a;
   border-top: 1px solid #222;
 }
 
 /* 기타 컴포넌트 색상 수정 */
-body.dark-mode .outline-btn {
+body.dark-mode:not(.home) .outline-btn {
   border-color: #ffffff;
   color: #ffffff;
 }
-body.dark-mode .outline-btn:hover {
+body.dark-mode:not(.home) .outline-btn:hover {
   background-color: #ffffff;
   color: #121212;
 }
 
-body.dark-mode .gb-form input,
-body.dark-mode .gb-form textarea {
+body.dark-mode:not(.home) .gb-form input,
+body.dark-mode:not(.home) .gb-form textarea {
   background-color: #2a2a2a;
   border-color: #444;
   color: #ffffff;
 }
 
-body.dark-mode .gb-entry {
+body.dark-mode:not(.home) .gb-entry {
   background-color: #252525;
   border-left-color: #00d1ff;
 }
 
-body.dark-mode .filter-btn {
+body.dark-mode:not(.home) .filter-btn {
   background-color: #2a2a2a;
   border-color: #444;
   color: #aaa;
 }
-body.dark-mode .filter-btn:hover,
-body.dark-mode .filter-btn.active {
+body.dark-mode:not(.home) .filter-btn:hover,
+body.dark-mode:not(.home) .filter-btn.active {
   background-color: #00d1ff;
   border-color: #00d1ff;
   color: #fff;
 }
 
-body.dark-mode .profile-img {
+body.dark-mode:not(.home) .profile-img {
   border-color: #121212;
 }
