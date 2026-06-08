@@ -9,6 +9,33 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
     />
+    <style>
+      /* 다크모드 시 박스를 둘러싼 전체 배경을 검정색으로 변경 */
+      body.dark-mode.home {
+        background-color: #121212;
+      }
+      body.dark-mode.home .section-title {
+        color: #ffffff;
+      }
+      /* 요약 보기 박스의 배경과 글자색 변경 */
+      body.dark-mode.home .summary-card {
+        background-color: #1e1e1e;
+        border-color: #333;
+      }
+      body.dark-mode.home .summary-card h3,
+      body.dark-mode.home .summary-card p {
+        color: #ffffff !important;
+      }
+      /* 버튼 색상도 다크모드에 맞게 조정 */
+      body.dark-mode.home .outline-btn {
+        border-color: #ffffff;
+        color: #ffffff;
+      }
+      body.dark-mode.home .outline-btn:hover {
+        background-color: #ffffff;
+        color: #121212;
+      }
+    </style>
   </head>
   <body class="home">
     <nav id="navbar">
