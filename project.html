@@ -18,6 +18,11 @@
           <li><a href="aboutme.html">About Me</a></li>
           <li><a href="team.html">Team</a></li>
           <li><a href="project.html">Project</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle-btn">
+              <img src="moon.png" alt="다크모드" />
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -26,8 +31,15 @@
       <section class="content-section">
         <h2 class="section-title">My Projects</h2>
 
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">전체</button>
+          <button class="filter-btn" data-filter="c">C언어</button>
+          <button class="filter-btn" data-filter="java">Java</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+        </div>
+
         <div class="project-grid-2">
-          <div class="card">
+          <div class="card" data-category="c">
             <h3 style="color: #333">01. C언어 기반 핀볼 시뮬레이션</h3>
             <p style="margin-top: 15px; color: #555">
               <strong>기술:</strong> C, Data Structure<br />
@@ -37,7 +49,7 @@
             </p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="java">
             <h3 style="color: #333">02. Java 객체지향 자판기 시스템</h3>
             <p style="margin-top: 15px; color: #555">
               <strong>기술:</strong> Java, OOP<br />
@@ -48,7 +60,7 @@
             </p>
           </div>
 
-          <div class="card">
+          <div class="card" data-category="web">
             <h3 id="midterm-title" class="clickable-title" style="color: #333">
               03. 웹프로그래밍 중간과제
             </h3>
@@ -66,7 +78,7 @@
             >
           </div>
 
-          <div class="card">
+          <div class="card" data-category="web">
             <h3 id="final-title" class="clickable-title" style="color: #333">
               04. 웹프로그래밍 기말과제
             </h3>

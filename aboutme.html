@@ -22,6 +22,11 @@
           <li><a href="aboutme.html">About Me</a></li>
           <li><a href="team.html">Team</a></li>
           <li><a href="project.html">Project</a></li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle-btn">
+              <img src="moon.png" alt="다크모드" />
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
@@ -60,6 +65,12 @@
               type="text"
               id="gb-name"
               placeholder="이름을 입력해주세요"
+              required
+            />
+            <input
+              type="password"
+              id="gb-password"
+              placeholder="비밀번호 (삭제 시 필요)"
               required
             />
             <textarea
